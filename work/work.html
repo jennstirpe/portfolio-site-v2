@@ -4,11 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/5b5ac5b9a4.js" crossorigin="anonymous"></script>
     <title>Portfolio</title>
 </head>
 <body>
 
-    <h1>Portfolio</h1>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+        </nav>
+        <h1>Projects</h1>
+    </header>
+
+    <main>
+        
+        <div class="card">
+            <a class="card__link" href="https://jennstirpe.github.io/time-tracking-dashboard/"><img class="card__preview" src="../resources/time-tracking-dash.png" alt="time tracking dashboard preview"></a>
+            <div class="card__info">
+                <h2 class="card__name">Time Tracking Dashboard App</h2>
+                <p class="card__desc">The dashboard displays a user profile with the daily, weekly and monthly 
+                    hours the user spent spent on certain activities. This version is currently just displaying 
+                    JSON data from a local file.
+                </p>
+                <span class="card__language">React</span>
+                <span class="card__attribution">Design supplied by Frontend Mentor</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <a class="card__link" href="https://jennstirpe.github.io/intro-section/"><img class="card__preview" src="../resources/intro-section.png" alt="company intro section preview"></a>
+            <div class="card__info">
+                <h2 class="card__name">Company Intro Section</h2>
+                <p class="card__desc">A fictional company's landing page showcasing a responsive dropdown navigation bar.</p>
+                <span class="card__language">HTML/Sass/JavaScript</span>
+                <span class="card__attribution">Design supplied by Frontend Mentor</span>
+            </div>   
+        </div>
+
+        <div class="card">
+            <a class="card__link" href="https://jennstirpe.github.io/tip-calc-app-js/"><img class="card__preview" src="../resources/tip-calc-app.png" alt="tip calculator preview"></a>
+            <div class="card__info">
+                <h2 class="card__name">Tip/Split Calculator Web App</h2>
+                <p class="card__desc">A tip calculator that takes in the bill and tip amounts with the number of people in a group and 
+                    splits it evenly. It displays both the amount of the tip each member of the group is responsible 
+                    for as well as the total amount with tip included.
+                </p>
+                <span class="card__language">HTML/Sass/JavaScript</span>
+                <span class="card__attribution">Design supplied by Frontend Mentor</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <a class="card__link" href="https://jennstirpe.github.io/advice-generator/"><img class="card__preview" src="../resources/advice-generator.png" alt="advice generator preview"></a>
+            <div class="card__info">
+                <h2 class="card__name">Advice Generator App</h2>
+                <p class="card__desc">Uses the <a href="https://api.adviceslip.com/">Advice Slip API</a> to generate and display 
+                    a random piece of advice. </p>
+                <span class="card__language">React</span>
+                <span class="card__attribution">Design supplied by Frontend Mentor</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <a class="card__link" href="https://jennstirpe.github.io/FAQ-accordion-card/"><img class="card__preview" src="../resources/faq-accordion-card.png" alt="FAQ accordion card preview"></a>
+            <div class="card__info">
+                <h2 class="card__name">FAQ Accordion Card</h2>
+                <p class="card__desc">A basic FAQ card with answers hidden and displayed in an accordion style layout.</p>
+                <span class="card__language">HTML/Sass/JavaScript</span>
+                <span class="card__attribution">Design supplied by Frontend Mentor</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <a class="card__link" href="https://jennstirpe.github.io/lights-out/"><img class="card__preview" src="../resources/lights-out.png" alt="lights out game"></a>
+            <div class="card__info">
+                <h2 class="card__name">Lights Out</h2>
+                <p class="card__desc">A game where players have to turn off all the lights in as few moves as possible.</p>
+                <span class="card__language">HTML/CSS/JavaScript</span>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/jennifer-s-438005231/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/jennstirpe" aria-label="GitHub"><i class="fa-brands fa-github-square"></i></a>
+        
+        <button aria-label="email"><i class="fa-solid fa-envelope"></i></button>
+        <a href="#">Resume</a>
+    </footer>
     
 </body>
 </html>
