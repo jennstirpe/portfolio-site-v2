@@ -93,7 +93,7 @@ body {
     right: 0;
     opacity: 0;
     padding: 1rem 4rem 1rem 8rem;
-    transition: all 500ms linear;
+    transition: all 500ms ease-out;
 
     &:hover {
         opacity: 1;
@@ -117,11 +117,21 @@ $black: #000;
 .work__header {
     padding: 2rem;
     border-bottom: 1px solid $orange;
-    
 
     .work__nav a {
         text-decoration: none;
+        text-transform: uppercase;
         color: $blue;
+        font-weight: 200;
+        border-bottom: 0px solid white;
+
+        transition: border 250ms linear;
+
+        &:hover {
+            font-weight: 400;
+            color: $orange;
+            border-bottom: 2px solid $orange;
+        }
     }
 
     .work__heading {
@@ -157,6 +167,10 @@ $black: #000;
                 width: 100%;
                 border-top-left-radius: .5rem;
                 border-top-right-radius: .5rem;
+
+                &:hover {
+                    opacity: .75;
+                }
             }
         }
 
@@ -178,6 +192,17 @@ $black: #000;
                 line-height: 1.5rem;
                 padding-top: 1rem;
                 margin: 0;
+
+                a {
+                    color: rgb(150, 150, 150);
+                    text-decoration: none;
+                    transition: all 200ms ease-out;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $orange;
+                    }
+                }
             }
 
             .card__language {
