@@ -4,11 +4,11 @@ A site built to display my latest completed projects.
 
 ## Description
 
-The work page showcases just a few of the projects I've worked on and completed. It's a combination of recently completed projects and projects created to gain experience in different frameworks and libraries.
+The project dropdown contains just a few of the projects I've completed. It's a combination of recently completed projects and projects created to gain experience in different frameworks and libraries.
 
 ### Built With
 
-This version is built with a combination of HTML/CSS/JavaScript
+This version is built with a combination of HTML/Bootstrap/Sass.
 
 ## Contact
 

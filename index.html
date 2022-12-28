@@ -5,136 +5,254 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+        <!-- Fonts, Icons -->
         <script src="https://kit.fontawesome.com/5b5ac5b9a4.js" crossorigin="anonymous"></script>
-        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
         
-
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- Custom Styles -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/styles.css">
+        
         <title>Jennifer</title>
-        <link rel="icon" href="resources/space-travel.png">
+        <link rel="icon" href="resources/icons/space-travel.png">
 
-        <script src="index.js" defer></script>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
     </head>
 <body>
 
-    <header>
+  <!-- aria -->
 
-        <nav class="header__nav">
-            <button class="menu-icon open" aria-label="open menu"><i class="fa-solid fa-bars"></i></button>
-            <span class="logo">js_</span>
-            <ul class="menu menu-closed">
-                <button class="menu-icon close" aria-label="close menu"><i class="fa-solid fa-xmark"></i></button>
-                
-                <li class="menu__link"><a href="#about">About</a></li>
-                <li class="menu__link"><a href="#work">Work</a></li>
-                <li class="menu__link"><a href="#contact">Contact</a></li>
-                <li class="menu__link"><a class="bio__contact bio__resume" href="../resources/documents/resume.pdf" target="_blank">Resume</a></li>
+<!-- MODALS -->
+
+    <!-- Contact modal -->
+    <div class="modal fade" id="contact-modal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="contactModalLabel">Send Me a Message!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="d-flex flex-column" action="https://formsubmit.io/send/d7e574ec-8e96-4097-896a-be431d3255fb" method="POST">
+              <input type="hidden" name="_subject" value="New submission from portfolio site!">
+      
+      
+              <input class="p-2 my-1" name="name" type="text" id="name" placeholder="Name" required>
+              <input class="p-2 my-1" name="email" type="email" id="email" placeholder="Email Address" required>
+              <textarea class="p-2 my-1" name="comment" id="comment" rows="3" placeholder="Leave your message here" required></textarea>
+                      
+              <input name="_formsubmit_id" type="text" style="display:none">
+      
+              <input class="p-2 my-1" id="contact__submit" value="Submit" type="submit">
+      
+              <input type="text" name="_honey" style="display:none">
+          </form> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Todo List Modal -->
+    <div class="modal fade project-card" id="todo-modal" aria-hidden="true" aria-labelledby="todoModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5  project-card-title" id="todoModalToggleLabel">Todo List</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img loading="lazy" src="resources/previews/todo-app.png" class="card-img-top" alt="Todo List App">
+              <div class="card-body">
+                <p class="card-text project-card-text">A traditional todo list app, a user is able to to add and delete tasks, as well as mark tasks complete. Features different filters to view only active or completed tasks as well as light and dark modes. Currently saves to a user's local storage.</p>
+              </div>
+              <div class="card-body project-card-lang border-top border-bottom py-1">
+                <span class="card-text">React</span>
+              </div>
+              <div class="card-body d-flex justify-content-center">
+                <a href="https://jennstirpe.github.io/todo-app/" target="_blank" class="card-link project-card-link">View</a>
+                <a href="https://github.com/jennstirpe/todo-app" target="_blank" class="card-link project-card-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn left-arrow" data-bs-target="#lights-out-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
+            <button class="btn right-arrow" data-bs-target="#ip-address-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IP Address Modal -->
+    <div class="modal fade project-card" id="ip-address-modal" aria-hidden="true" aria-labelledby="ipAddressModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 project-card-title" id="ipAddressModalToggleLabel">IP Address Tracker</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img loading="lazy" src="resources/previews/ip-address-tracker.png" class="card-img-top" alt="IP Address Tracker App">
+              <div class="card-body">
+                <p class="card-text project-card-text">Using the IP Geolocation API by IPify and LeafletJS, a user can get the location, timezone and service provider of any IP Address they search for and see it displayed on a map.</p>
+              </div>
+              <div class="card-body project-card-lang border-top border-bottom py-1">
+                <span class="card-text">HTML/Sass/JavaScript</span>
+              </div>
+              <div class="card-body d-flex justify-content-center">
+                <a href="https://jennstirpe.github.io/ip-address-tracker-js/" target="_blank" class="card-link project-card-link">View</a>
+                <a href="https://github.com/jennstirpe/ip-address-tracker-js" target="_blank" class="card-link project-card-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn left-arrow" data-bs-target="#todo-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
+            <button class="btn right-arrow" data-bs-target="#tip-calc-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tip Calculator Modal -->
+    <div class="modal fade project-card" id="tip-calc-modal" aria-hidden="true" aria-labelledby="tipCalcModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 project-card-title" id="tipCalcModalToggleLabel">Tip Calculator</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img loading="lazy" src="resources/previews/tip-calc-app.png" class="card-img-top" alt="Tip Calculator App">
+              <div class="card-body">
+                <p class="card-text project-card-text">Once a user enters the bill total, desired tip percentage and number of people splitting the bill, the app will calculate the tip and new total, then display the amount each person will be responsible for if it were to be split evenly.</p>
+              </div>
+              <div class="card-body project-card-lang border-top border-bottom py-1">
+                <span class="card-text">HTML/Sass/JavaScript</span>
+              </div>
+              <div class="card-body d-flex justify-content-center">
+                <a href="https://jennstirpe.github.io/tip-calc-app-js/" target="_blank" class="card-link project-card-link">View</a>
+                <a href="https://github.com/jennstirpe/tip-calc-app-js" target="_blank" class="card-link project-card-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn left-arrow" data-bs-target="#ip-address-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
+            <button class="btn right-arrow" data-bs-target="#lights-out-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lights Out Modal -->
+    <div class="modal fade project-card" id="lights-out-modal" aria-hidden="true" aria-labelledby="lightsOutModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 project-card-title" id="lightsOutModalToggleLabel">Lights Out</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img loading="lazy" src="resources/previews/lights-out.png" class="card-img-top" alt="Lights Out Game">
+              <div class="card-body">
+                <p class="card-text project-card-text">A logic game released in the mid-90's, the player's goal is to turn off all the lights in as few moves as possible. Clicking any light will toggle it and its four adjacent lights on/off.</p>
+              </div>
+              <div class="card-body project-card-lang border-top border-bottom py-1">
+                <span class="card-text">HTML/Sass/JavaScript</span>
+              </div>
+              <div class="card-body d-flex justify-content-center">
+                <a href="https://jennstirpe.github.io/lights-out/" target="_blank" class="card-link project-card-link">View</a>
+                <a href="https://github.com/jennstirpe/lights-out" target="_blank" class="card-link project-card-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn left-arrow" data-bs-target="#tip-calc-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
+            <button class="btn right-arrow" data-bs-target="#todo-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- NAV -->
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <button id="menu-icon" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span role="button" aria-label="Navigation menu"><i class="fa fa-bars" aria-hidden="true" style="color:#90a9b7"></i></span>
+          </button>
+             
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+              <li class="nav-item dropdown">
+                <a id="nav-projects" class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Projects
+                </a>
+                <ul id="nav-projects-menu" class="dropdown-menu">
+                  <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#todo-modal" role="button">Todo List App</a></li>
+                  <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#ip-address-modal" role="button">IP Address Tracker</a></li>
+                  <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#tip-calc-modal" role="button">Tip Calculator</a></li>
+                  <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#lights-out-modal" role="button">Lights Out</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item project-item" href="./resources/documents/resume.pdf" target="_blank">Resume</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <button id="nav-contact" type="button" class="btn fs-5 px-0" data-bs-toggle="modal" data-bs-target="#contact-modal">
+                  Contact
+                </button>
+              </li>
             </ul>
-        </nav>
-
-        <div class="header__intro">
-            <h1>Jennifer Stirpe,</h1>
-            <span>Front End Developer</span>
+          </div>
         </div>
-
-        <div class="socials"  data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-            <a class="social" href="https://www.linkedin.com/in/jenniferstirpe/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a class="social" href="https://github.com/jennstirpe" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github-square"></i></a>
-            <a class="social" href="#contact" aria-label="email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-
-        <div class="arrowDown">
-            <i id="arrow" class="fa-solid fa-arrow-down-long"></i>
-        </div>
-
-    </header>
-    <main>
-        <section id="about" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-            <h2 class="section__title">A little about me..</h2>
-            <div class="about__details">
-                <div class="about__bio">
-                    <p><span>As developer with 2 years of experience</span> building websites and web applications with React and JavaScript, my goal is to build strong, visually appealing sites and apps while maintining web accessibility standards.</p> 
-                    <p>I’m always on the lookout for new tools and technology to learn and implement to create the best possible user experience for any given project.</p>
-                    <div class="about__img"></div>
-                </div>        
-            </div>
-        </section>
-
-        <section id="work">
-            <h2 class="section__title">Featured Work</h2>
-
-            <div class="work__list" >
-
-                <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                    <img class="card__preview" src="./resources/todo-app.png" alt="Todo app preview">
-                    <div class="card__info">
-                        <a class="card__link" href="https://jennstirpe.github.io/todo-app/" target="_blank"><h2 class="card__name">To-do List App</h2></a>
-                        <p class="card__desc">A traditional todo list app, a user is able to to add and delete tasks, as well as mark tasks complete. Features different filters to view only active or completed tasks as well as light and dark modes. Currently saves to a user's local storage. </p>
-                        <span class="card__language">React</span>
-                    </div>
-                </div>
-        
-                <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                    <img class="card__preview" src="./resources/ip-address-tracker.png" alt="IP Address app preview">
-                    <div class="card__info">
-                        <a class="card__link" href="https://jennstirpe.github.io/ip-address-tracker-js/" target="_blank"><h2 class="card__name">IP Address Tracker</h2></a>
-                        <p class="card__desc">Using the IP Geolocation API by IPify and LeafletJS, a user can get the location, timezone and service provider of any IP Address they search for and see it displayed on a map.</p>
-                        <span class="card__language">HTML/Sass/JavaScript</span>
-                    </div>
-                </div>
-
-                <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                    <img class="card__preview" src="./resources/tip-calc-app.png" alt="Tip Calculator app preview">
-                    <div class="card__info">
-                        <a class="card__link" href="https://jennstirpe.github.io/tip-calc-app-js/" target="_blank"><h2 class="card__name">Tip/Split Calculator</h2></a>
-                        <p class="card__desc">Once a user enters the bill total, desired tip percentage and number of people splitting the bill, the app will calculate the tip and new total, then display the amount each person will be responsible for if it were to be split evenly.</p>
-                        <span class="card__language">HTML/Sass/JavaScript</span>
-                    </div>
-                </div>
-
-                <div class="card" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                    <img class="card__preview" src="./resources/lights-out.png" alt="Lights out game preview">
-                    <div class="card__info">
-                        <a class="card__link" href="https://jennstirpe.github.io/lights-out/" target="_blank"><h2 class="card__name">Lights Out</h2></a>
-                        <p class="card__desc">A logic game released in the mid-90's, the player's goal is to turn off all the lights in as few moves as possible. Clicking any light will toggle it and its four adjacent lights on/off.</p>
-                        <span class="card__language">HTML/CSS/JavaScript</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        
-    </main>
-    <footer>
-        <section id="contact" data-aos="fade-in" data-aos-duration="2000">
-            <form  id="contact__form" class="email-form " action="https://formsubmit.io/send/d7e574ec-8e96-4097-896a-be431d3255fb" method="POST">
-                <h2>Send Me a Message!</h2>
-                <input type="hidden" name="_subject" value="New submission from portfolio site!">
-
-
-                <input name="name" type="text" id="name" placeholder="Name" required>
-                <input name="email" type="email" id="email" placeholder="Email Address" required>
-                <textarea name="comment" id="comment" rows="3" placeholder="Leave your message here..." required></textarea>
-                
-                <input name="_formsubmit_id" type="text" style="display:none">
-
-                <input id="contact__submit" value="Submit" type="submit">
-
-                <input type="text" name="_honey" style="display:none">
-            </form> 
-        </section>
-    </footer>
+      </nav>
     
 
+<!-- MAIN -->
+      <main class="container">
 
+        <!-- Animation -->
+        <div id="anim-main" aria-hidden="true">
+              <div class="outer-circle"></div>
+              <div class="inner-circle"></div>
+              <div class="box box-top-left"></div>
+              <div class="box box-top-right"></div>
+              <div class="box box-bottom-left"></div>
+              <div class="box box-bottom-right"></div>
+        </div>
+
+        <section id="main-banner" class="container d-flex flex-column align-items-center" >
+
+          <div id="main-heading" class="d-flex flex-column align-items-center">
+            <h1 id="fs-1 main-heading-name">Jennifer Stirpe</h1>
+            <span id="main-heading-title" class="fs-6">Front End Developer</span>
+          </div>
+
+          <ul id="main-socials" class="d-flex justify-content-center p-0 my-3">
+            <li class="social">
+              <a href="https://www.linkedin.com/in/jenniferstirpe/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fs-2 mx-2"></i></a>
+            </li>
+            <li class="social">
+              <a href="https://github.com/jennstirpe" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github-square fs-2 mx-2"></i></a>
+            </li>
+          </ul>
+
+        </section>
+
+      </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>
