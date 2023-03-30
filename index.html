@@ -59,6 +59,36 @@
       </div>
     </div>
 
+    <!-- Habit Tracker Modal -->
+    <div class="modal fade project-card" id="habit-modal" aria-hidden="true" aria-labelledby="habitModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5  project-card-title" id="habitModalToggleLabel">HabiTracker</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <img loading="lazy" src="resources/previews/habit-tracker.png" class="card-img-top" alt="Todo List App">
+              <div class="card-body">
+                <p class="card-text project-card-text">A tracker that allows users to set habits that they'd like to track. Each day, a new record is created and the user can mark habits complete for that day as they complete them. The user can view and compare previous days which can provide motivation to do the things they want to do everyday, creating lasting habits.</p>
+              </div>
+              <div class="card-body project-card-lang border-top border-bottom py-1">
+                <span class="card-text">React</span>
+              </div>
+              <div class="card-body d-flex justify-content-center">
+                <a href="https://jennstirpe.github.io/habit-tracker-v2/" target="_blank" class="card-link project-card-link">View</a>
+                <a href="https://github.com/jennstirpe/habit-tracker-v2" target="_blank" class="card-link project-card-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn left-arrow" data-bs-target="#lights-out-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
+            <button class="btn right-arrow" data-bs-target="#todo-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Todo List Modal -->
     <div class="modal fade project-card" id="todo-modal" aria-hidden="true" aria-labelledby="todoModalToggleLabel" tabindex="-1">
@@ -84,7 +114,7 @@
             </div>
           </div>
           <div class="modal-footer justify-content-between">
-            <button class="btn left-arrow" data-bs-target="#lights-out-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
+            <button class="btn left-arrow" data-bs-target="#habit-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
             <button class="btn right-arrow" data-bs-target="#ip-address-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
           </div>
         </div>
@@ -178,7 +208,7 @@
           </div>
           <div class="modal-footer justify-content-between">
             <button class="btn left-arrow" data-bs-target="#tip-calc-modal" data-bs-toggle="modal" aria-label="previous">&larr;</button>
-            <button class="btn right-arrow" data-bs-target="#todo-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
+            <button class="btn right-arrow" data-bs-target="#habit-modal" data-bs-toggle="modal" aria-label="next">&rarr;</button>
           </div>
         </div>
       </div>
@@ -199,6 +229,7 @@
                   Projects
                 </a>
                 <ul id="nav-projects-menu" class="dropdown-menu">
+                  <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#habit-modal" role="button">HabiTracker App</a></li>
                   <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#todo-modal" role="button">Todo List App</a></li>
                   <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#ip-address-modal" role="button">IP Address Tracker</a></li>
                   <li><a class="dropdown-item project-item" data-bs-toggle="modal" href="#tip-calc-modal" role="button">Tip Calculator</a></li>
